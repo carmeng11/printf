@@ -22,7 +22,7 @@ int ft_control_chars(char const c, va_list args)
 
 int ft_control_pointer(va_list args) 
 {
-	unsigned long long  aux;
+	unsigned long long  aux;  
 	int                 toretorn;
 
 	toretorn = '0';

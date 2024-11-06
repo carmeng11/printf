@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 /*int	main(void)
 {
@@ -56,9 +57,7 @@ int	main()
 }*/
 int ft_printf(const char *format, ...)
 {
-	va_list	args;
-	va_start (args, format);
-	
+	return (0);	
 }
 int	main()
 {
@@ -74,3 +73,24 @@ int	main()
 	printf("%d characters were written\n", result);
 	return (0);
 }
+
+/*int	ft_putchar(int c)
+{
+	int	toreturn;
+
+	toreturn = 0;
+	write(1, &c, 1);
+	//write(1, "\n", 1);
+	return (++toreturn);
+}
+int	main()
+{
+	int	c;
+	int	toreturn;
+
+	c = 'b';
+	toreturn = ft_putchar(c);
+	printf("\nel caracter es: %c\n", c);
+	printf("el número de caracteres es: %d", toreturn);
+	return(0);
+}*/
