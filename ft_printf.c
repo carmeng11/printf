@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 19:33:10 by cagomez-          #+#    #+#             */
+/*   Updated: 2024/11/11 19:33:10 by cagomez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int	ft_control(char const c, va_list args)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (c == 'c' || c == 's')
@@ -18,11 +30,11 @@ static int	ft_control(char const c, va_list args)
 	return (count);
 }
 
-int ft_printf(char const *format, ...)
+int	ft_printf(char const *format, ...)
 {
-	va_list args;
-	int	i;
-	int	count;
+	va_list	args;
+	int		i;
+	int		count;
 
 	va_start(args, format);
 	i = 0;

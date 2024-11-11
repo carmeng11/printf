@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_controls.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 19:32:49 by cagomez-          #+#    #+#             */
+/*   Updated: 2024/11/11 19:32:49 by cagomez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_control_chars(char const c, va_list args)
+int	ft_control_chars(char const c, va_list args)
 {
-	int aux1;
-	char*aux2;
-	int count;
+	int		aux1;
+	char	*aux2;
+	int		count;
 
 	count = 0;
 	if (c == 'c')
@@ -20,12 +32,12 @@ int ft_control_chars(char const c, va_list args)
 	return (count);
 }
 
-int ft_control_pointer(va_list args) 
+int	ft_control_pointer(va_list args)
 {
-	unsigned long long	aux;  
+	unsigned long long	aux;
 	int					count;
 
-	count =	'0';
+	count = '0';
 	aux = va_arg(args, unsigned long long);
 	if (!aux)
 	{
@@ -34,12 +46,12 @@ int ft_control_pointer(va_list args)
 	else
 	{
 		count += ft_putstr("0x");
-		count += ft_puthex(aux, 0);   
+		count += ft_puthex(aux, 0);
 	}
 	return (count);
 }
 
-int ft_control_ints(char const c, va_list args)
+int	ft_control_ints(char const c, va_list args)
 {
 	long double		aux1;
 	int				aux2;
@@ -65,7 +77,7 @@ int ft_control_ints(char const c, va_list args)
 	return (count);
 }
 
-int ft_control_hex(char const c, va_list args)
+int	ft_control_hex(char const c, va_list args)
 {
 	unsigned int	aux1;
 	unsigned int	aux2;

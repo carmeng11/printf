@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_aux.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 19:32:43 by cagomez-          #+#    #+#             */
+/*   Updated: 2024/11/11 19:32:43 by cagomez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 
@@ -6,15 +18,16 @@ int	ft_putchar(int c)
 	write (1, &c, 1);
 	return (1);
 }
-int ft_putstr(char *str)
+
+int	ft_putstr(char *str)
 {
-	int count;
-	int i;
+	int	count;
+	int	i;
 
 	i = 0;
 	count = 0;
 	if (!str)
-		return(ft_putstr("(null)"));
+		return (ft_putstr("(null)"));
 	while (str[i] != '\0')
 	{
 		count += ft_putchar(str[i]);
@@ -23,9 +36,7 @@ int ft_putstr(char *str)
 	return (count);
 }
 
-
-
-int ft_puthex(unsigned long long n, int bol)
+int	ft_puthex(unsigned long long n, int bol)
 {
 	char	min;
 	char	may;
@@ -45,7 +56,7 @@ int ft_puthex(unsigned long long n, int bol)
 
 int	ft_putnbr(int n)
 {
-	int	count;
+	int		count;
 	char	x;
 
 	count = 0;
@@ -72,9 +83,9 @@ int	ft_putnbr(int n)
 	return (count);
 }
 
-int ft_putunsignedint(unsigned int n)
+int	ft_putunsignedint(unsigned int n)
 {
-	int	count;
+	int		count;
 	char	x;
 
 	count = 0;
@@ -91,4 +102,3 @@ int ft_putunsignedint(unsigned int n)
 	}
 	return (count);
 }
-
