@@ -20,7 +20,7 @@ static int	ft_control(char const c, va_list args)
 
 int ft_printf(char const *format, ...)
 {
-	va	list args;
+	va_list args;
 	int	i;
 	int	count;
 

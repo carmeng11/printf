@@ -16,13 +16,15 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	ft_printf(const char *str, ...);
-int	ft_printf_c(int c);
-int	ft_printf_d_i(int c);
-int	ft_printf_s(char *str);
-int	ft_printf_u(unsigned int);
-int	ft_printf_x(unsigned int);
-int	ft_printf_x_big(unsigned int);
-int	ft_printf_p(size_t c);
+int ft_printf(char const *format, ...);
+int	ft_putchar(int c);
+int ft_putstr(char *str);
+int ft_puthex(unsigned long long n, int bol);
+int	ft_putnbr(int n);
+int ft_putunsignedint(unsigned int n);
+int ft_control_chars(char const c, va_list args);
+int ft_control_pointer(va_list args);
+int ft_control_ints(char const c, va_list args);
+int ft_control_hex(char const c, va_list args);
 
 #endif

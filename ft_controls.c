@@ -44,12 +44,13 @@ int ft_control_ints(char const c, va_list args)
 	long double		aux1;
 	int				aux2;
 	unsigned int	aux3;
+	int				count;
 
 	count = 0;
 	if (c == 'd')
 	{
 		aux1 = va_arg(args, long double);
-		count += ft_putlongdouble(aux1);
+		count += ft_putnbr(aux1);
 	}
 	else if (c == 'i')
 	{
@@ -68,6 +69,7 @@ int ft_control_hex(char const c, va_list args)
 {
 	unsigned int	aux1;
 	unsigned int	aux2;
+	int				count;
 
 	count = 0;
 	if (c == 'x')
