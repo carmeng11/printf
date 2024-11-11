@@ -15,7 +15,7 @@ RM = rm -rf
 CC = cc
 CFLAGS = -Werror -Wall -Wextra
 LIB = ar -rcs
-SRC = ft_printf.c
+SRC = ft_printf.c ft_aux.c ft_controls.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

@@ -76,21 +76,21 @@ int	main()
 
 /*int	ft_putchar(int c)
 {
-	int	toreturn;
+	int	count;
 
-	toreturn = 0;
+	count = 0;
 	write(1, &c, 1);
 	//write(1, "\n", 1);
-	return (++toreturn);
+	return (++count);
 }
 int	main()
 {
 	int	c;
-	int	toreturn;
+	int	count;
 
 	c = 'b';
-	toreturn = ft_putchar(c);
+	count = ft_putchar(c);
 	printf("\nel caracter es: %c\n", c);
-	printf("el número de caracteres es: %d", toreturn);
+	printf("el número de caracteres es: %d", count);
 	return(0);
 }*/

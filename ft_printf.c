@@ -2,42 +2,42 @@
 
 static int	ft_control(char const c, va_list args)
 {
-	int toreturn;
+	int count;
 
-	toreturn = 0;
+	count = 0;
 	if (c == 'c' || c == 's')
-		toreturn += ft_control_chars(c, args);
+		count += ft_control_chars(c, args);
 	else if (c == 'p')
-		toreturn += ft_control_pointer(args);
+		count += ft_control_pointer(args);
 	else if (c == 'd' || c == 'i' || c == 'u')
-		toreturn += ft_control_ints(c, args);
+		count += ft_control_ints(c, args);
 	else if (c == 'x' || c == 'X')
-		toreturn += ft_control_hex(c, args);
+		count += ft_control_hex(c, args);
 	else if (c == '%')
-		toreturn += ft_putchar('%');
-	return (toreturn);
+		count += ft_putchar('%');
+	return (count);
 }
 
 int ft_printf(char const *format, ...)
 {
 	va	list args;
 	int	i;
-	int	toreturn;
+	int	count;
 
 	va_start(args, format);
 	i = 0;
-	toreturn = 0;
+	count = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			toreturn += ft_control(format[i], args);
+			count += ft_control(format[i], args);
 		}
 		else
-			toreturn += ft_putchar(format[i]);
+			count += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
-	return (toreturn);
+	return (count);
 }

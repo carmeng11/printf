@@ -1,10 +1,58 @@
+
+
 int	ft_putchar(int c)
 {
-	int toreturn;
+	/*int count;
 
-	toreturn = 0;
+	count = 0;
 	write (1, &c, 1)
-	return (toreturn);
+	return (count);*/
+	write (1, &c, 1)
+	return (1);
+}
+/*int	main()
+{
+	char	a;
+
+	a = 'X';
+	printf("El número de caracteres es %d", ft_putchar(a));           
+	return (0);
+}*/
+int ft_putstr(char *str)
+{
+	int count;
+	int i;
+
+	i = 0;
+	count = 0;
+	if (!str)
+		return(ft_putstr("(null)"));
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		//write (1, &str[i], 1);
+		i++;
+		count++;
+	}
+	return (count);
+}
+int	main()
+{
+	char str[] = "holatus";
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;	
+	printf("El número de caracteres contados en ft_putstr es %d", ft_putstr(str));
+	/*while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+		count++;	
+	}*/
+	printf("El número de caracteres contados en ft_putchar es %d", count);
+	return (0);
 }
 
 
@@ -12,28 +60,25 @@ int ft_puthex(unsigned long long n, int bol)
 {
 	char	min;
 	char	may;
-	int		toreturn;
+	int		count;
 
-	toreturn = 0;
+	count = 0;
 	min = "0123456789abcdef"[n % 16];
 	may = "0123456789ABCDEF"[n % 16];
 	if (n >= 16)
-		toreturn += ft_puthex(n / 16, bol);
+		count += ft_puthex(n / 16, bol);
 	if (!bol)
-		toreturn += ft_putchar(min);
+		count += ft_putchar(min);
 	else
-		toreturn += ft_putchar(may);
-	return (toreturn);
+		count += ft_putchar(may);
+	return (count);
 }
-
-#include <unistd.h>
-//#include <stdio.h>
 
 int	ft_putnbr(int n)
 {
-	int	toreturn;
+	int	count;
 
-	toreturn = 0;
+	count = 0;
 	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
@@ -61,3 +106,7 @@ int	ft_putnbr(int n)
 	ft_putnbr(-2147483648);
 	return (0);
 }*/
+int ft_putunsignedint(unsigned int n)
+{
+    int count;
+}

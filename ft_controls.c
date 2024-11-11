@@ -4,36 +4,81 @@ int ft_control_chars(char const c, va_list args)
 {
 	int aux1;
 	char*aux2;
-	int toreturn;
+	int count;
 
-	toreturn = 0;
+	count = 0;
 	if (c == 'c')
 	{
 		aux1 = va_arg(args, int);
-		toreturn += ft_putchar(aux1);
+		count += ft_putchar(aux1);
 	}
 	else if (c == 's')
 	{
 		aux2 = va_arg(args, char *);
-		toreturn += ft_putstr(aux2);
+		count += ft_putstr(aux2);
 	}
-	return (toreturn);
+	return (count);
 }
 
 int ft_control_pointer(va_list args) 
 {
-	unsigned long long  aux;  
-	int                 toretorn;
+	unsigned long long	aux;  
+	int					count;
 
-	toretorn = '0';
+	count =	'0';
 	aux = va_arg(args, unsigned long long);
 	if (!aux)
 	{
-		toretorn += ft_putstr("(nil)");
+		count += ft_putstr("(nil)");
 	}
 	else
 	{
-		toretorn += ft_putstr("0x");
-		toretorn += ft_puthex(aux, 0);   
+		count += ft_putstr("0x");
+		count += ft_puthex(aux, 0);   
 	}
+	return (count);
+}
+
+int ft_control_ints(char const c, va_list args)
+{
+	long double		aux1;
+	int				aux2;
+	unsigned int	aux3;
+
+	count = 0;
+	if (c == 'd')
+	{
+		aux1 = va_arg(args, long double);
+		count += ft_putlongdouble(aux1);
+	}
+	else if (c == 'i')
+	{
+		aux2 = va_arg(args, int);
+		count += ft_putnbr(aux2);
+	}
+	else if (c == 'u')
+	{
+		aux3 = va_arg(args, unsigned int);
+		count += ft_putunsignedint(aux3);
+	}
+	return (count);
+}
+
+int ft_control_hex(char const c, va_list args)
+{
+	unsigned int	aux1;
+	unsigned int	aux2;
+
+	count = 0;
+	if (c == 'x')
+	{
+		aux1 = va_arg(args, unsigned int);
+		count += ft_puthex(aux1, 0);
+	}
+	else if (c == 'X')
+	{
+		aux2 = va_arg(args, unsigned int);
+		count += ft_puthex(aux2, 1);
+	}
+	return (count);
 }
