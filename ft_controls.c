@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	ft_control_chars(char const c, va_list args)
 {
@@ -37,7 +38,7 @@ int	ft_control_pointer(va_list args)
 	unsigned long long	aux;
 	int					count;
 
-	count = '0';
+	count = 0;
 	aux = va_arg(args, unsigned long long);
 	if (!aux)
 	{
@@ -53,7 +54,7 @@ int	ft_control_pointer(va_list args)
 
 int	ft_control_ints(char const c, va_list args)
 {
-	long double		aux1;
+	int				aux1;
 	int				aux2;
 	unsigned int	aux3;
 	int				count;
@@ -61,7 +62,7 @@ int	ft_control_ints(char const c, va_list args)
 	count = 0;
 	if (c == 'd')
 	{
-		aux1 = va_arg(args, long double);
+		aux1 = va_arg(args, int);
 		count += ft_putnbr(aux1);
 	}
 	else if (c == 'i')

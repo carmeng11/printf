@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 static int	ft_control(char const c, va_list args)
 {
@@ -53,3 +54,19 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (count);
 }
+
+/*int	main(void)
+{
+	char	*prueba = "hola";
+	int	count;
+
+	count = 0;
+	printf("hola %s %c %d %i %u %x %X %p %%\n",
+	 "que tal", 'c', 8, -9, 6, 10, 10, &prueba);
+	ft_printf("hola %s %c %d %i %u %x %X %p %%\n",
+	 "que tal", 'c', 8, -9, 6, 10, 10, &prueba);
+	count = ft_printf("hola %s %c %d %i %u %x %X %p %%\n",
+	 "quetal", 'c', 8, -9, 6, 10, 10, &prueba);
+	ft_printf("El número de caracteres total es: %d", count);
+	return (0);
+}*/
