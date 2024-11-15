@@ -36,8 +36,7 @@ int	ft_putstr(char *str)
 	return (count);
 }
 
-int	ft_puthex(
-	, int bol)
+int	ft_puthex(unsigned long long n, int bol)
 {
 	char	min;
 	char	may;
