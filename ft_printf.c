@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 static int	ft_control(char const c, va_list args)
 {
@@ -59,14 +59,31 @@ int	ft_printf(char const *format, ...)
 {
 	char	*prueba = "hola";
 	int	count;
+	int	count1;
+	int	min;
 
 	count = 0;
+	min = -2147483648;
 	printf("hola %s %c %d %i %u %x %X %p %%\n",
-	 "que tal", 'c', 8, -9, 6, 10, 10, &prueba);
+	 "que tal", 'c', 8, min, 6, 10, 10, NULL);
 	ft_printf("hola %s %c %d %i %u %x %X %p %%\n",
-	 "que tal", 'c', 8, -9, 6, 10, 10, &prueba);
+	 NULL, 'c', 8, min, 6, 10, 10, &prueba);
 	count = ft_printf("hola %s %c %d %i %u %x %X %p %%\n",
 	 "quetal", 'c', 8, -9, 6, 10, 10, &prueba);
-	ft_printf("El número de caracteres total es: %d", count);
+	count1 = printf("hola %s %c %d %i %u %x %X %p %%\n",
+	 "quetal", 'c', 8, -9, 6, 10, 10, &prueba);
+	ft_printf("El número de caracteres en ft_printf es: %d\n", count);
+	printf("El número de caracteres en printf es: %d\n", count1);
 	return (0);
+}*/
+//main del último evaluador
+/*int	ft_printf(char const *format, ...);
+
+
+int	main()
+{
+	// int	num = 123;
+	ft_printf("this ptr: %p", (void*)-123);
+	printf("this ptr: %p", (void*)-123);
+	return 0;
 }*/
